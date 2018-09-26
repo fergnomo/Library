@@ -27,12 +27,18 @@
           
     
 	<a href="GestionLibros?opcion=vertemas">Ver Temas</a><br>
-	<%if((Usuario)session.getAttribute("usuario") != null) { %>
+	<%if((Usuario)session.getAttribute("usuario") != null && !((Usuario)session.getAttribute("usuario")).getTipoUsuario().equals("ADMON")) { %>
 	<a href="carrito.jsp">Ver Carrito</a><br>
 	<%} %>
 	<%if((Usuario)session.getAttribute("usuario") != null && ((Usuario)session.getAttribute("usuario")).getTipoUsuario().equals("ADMON") ) { %>
 		<a href="GestionAdmon?opcion=clientes">Menu admon</a><br>
 		<%} %>
+	<%if((Usuario)session.getAttribute("usuario") != null && !((Usuario)session.getAttribute("usuario")).getTipoUsuario().equals("ADMON")) { %>
+	<a href="altaDireccion.jsp">Alta Direccion</a><br>
+	<%} %>
+	<%if((Usuario)session.getAttribute("usuario") != null && !((Usuario)session.getAttribute("usuario")).getTipoUsuario().equals("ADMON")) { %>
+	<a href="GestionCliente?opcion=pedidos">Ver Pedidos</a><br>
+	<%} %>
 	<%if((Usuario)session.getAttribute("usuario") != null) { %>
 	<a href="GestionCarrito?opcion=desconn">Cerrar sesion</a>
 	<%} %>
