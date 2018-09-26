@@ -7,6 +7,7 @@
 		<class>beans.Pedido</class>
 		<class>beans.Tema</class>
 		<class>beans.Usuario</class>
+		<class>beans.Direccion</class>
 		<properties>
 			<property name="javax.persistence.jdbc.url" value="jdbc:oracle:thin:@localhost:1521:xe"/>
 			<property name="javax.persistence.jdbc.user" value="LIBRERIA"/>
