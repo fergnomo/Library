@@ -64,4 +64,12 @@ public class PedidoDAOImpl extends Generico<Pedido, Long> implements PedidoDAO {
 		tx.commit();
 		return (Object[]) query.getSingleResult();
 	}
+	
+	public List<Pedido> findPedidos(String idUsuario){
+		tx.begin();
+		String jpql = "select p from Pedido p where p.usuario.idUsuario = ?1";
+		query = em.createQuery(jpql).setParameter(1, idUsuario);
+		tx.commit();
+		return (List<Pedido>) query.getResultList();
+	}
 }
